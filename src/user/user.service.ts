@@ -23,8 +23,8 @@ export class UserService {
     return this.userRepository.find();
   }
 
-  findOne(id) {
-    return this.userRepository.findOne(id);
+  findOne(id:number): Promise<User | null> {
+    return this.userRepository.findOneBy({id});
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
